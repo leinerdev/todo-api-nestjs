@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - npm run build
-  copy_files:
+  post_build:
     commands:
       - cp -r ./.elasticbeanstalk/config.yml ./
 artifacts:
