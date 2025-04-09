@@ -4,6 +4,10 @@ phases:
   pre_build:
     commands:
       - npm install --force
+      - npm install @nestjs/cli@latest -g
+  build:
+    commands:
+      - npm run build
 artifacts:
   files:
     - '**/*'
