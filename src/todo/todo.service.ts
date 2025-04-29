@@ -24,6 +24,18 @@ export class TodoService {
     },
   ];
 
+  public get totalTodos(): number {
+    return this.todos.length;
+  }
+
+  public get pendingTodos(): number {
+    return this.todos.filter((todo) => !todo.done).length;
+  }
+
+  public get doneTodos(): number {
+    return this.todos.filter((todo) => todo.done).length;
+  }
+
   public findAll(statusArgs: StatusArgs): Todo[] {
     const { status } = statusArgs;
     if (status !== undefined) {
